@@ -34,7 +34,6 @@
             padding: 24px;
         }
 
-        /* CABEÇALHO */
         .navbar {
             background: var(--bg-card);
             border-bottom: 1px solid var(--border);
@@ -80,7 +79,6 @@
             color: var(--gold);
         }
 
-        /* CERTIFICADO */
         .certificate-container {
             margin-top: 80px;
             margin-bottom: 40px;
@@ -323,12 +321,12 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="https://lrpluciano-pereira.github.io/index/" class="logo">⚖️ Ética Digital</a>
+            <a href="https://lrpluciano-pereira.github.io/index.html" class="logo">⚖️ Ética Digital</a>
             <div class="nav-links">
-                <a href="https://lrpluciano-pereira.github.io/index/">Início</a>
-                <a href="https://lrpluciano-pereira.github.io/teorico/">Teórico</a>
-                <a href="https://lrpluciano-pereira.github.io/simulador/">Simulador</a>
-                <a href="https://lrpluciano-pereira.github.io/forum/">Atividades</a>
+                <a href="https://lrpluciano-pereira.github.io/index.html">Início</a>
+                <a href="https://lrpluciano-pereira.github.io/conteudo.html">Conteúdo</a>
+                <a href="https://lrpluciano-pereira.github.io/simulador.html">Simulador</a>
+                <a href="https://lrpluciano-pereira.github.io/forum.html">Atividades</a>
             </div>
         </div>
     </nav>
@@ -336,12 +334,15 @@
     <div id="certContent"></div>
 
     <script>
-        // Função para gerar o certificado
+        // Verificar login
+        if (!localStorage.getItem('usuario_logado')) {
+            window.location.href = 'https://lrpluciano-pereira.github.io/login.html';
+        }
+
         function gerarCertificado() {
-            const nome = localStorage.getItem('certificado_nome');
+            const nome = localStorage.getItem('certificado_nome') || localStorage.getItem('usuario_nome');
             const data = localStorage.getItem('certificado_data');
             
-            // Verificar se o aluno tem direito ao certificado
             const videosAssistidos = JSON.parse(localStorage.getItem('videos_assistidos') || '[]');
             const simulacoes = JSON.parse(localStorage.getItem('simulacoes_realizadas') || '[]');
             let atividadesConcluidas = 0;
@@ -370,7 +371,7 @@
                         <h2>⚠️ Certificado não disponível</h2>
                         <p>Você precisa completar <strong>100% do curso</strong> no dashboard principal para gerar seu certificado.</p>
                         <p style="margin-top: 16px;">Seu progresso atual: <strong>${percentualGeral}%</strong></p>
-                        <a href="https://lrpluciano-pereira.github.io/index/" class="btn" style="margin-top: 20px; display: inline-block;">🏠 Voltar ao Dashboard</a>
+                        <a href="https://lrpluciano-pereira.github.io/index.html" class="btn" style="margin-top: 20px; display: inline-block;">🏠 Voltar ao Dashboard</a>
                     </div>
                 `;
                 return;
@@ -378,12 +379,7 @@
             
             const hoje = new Date();
             const dataFormatada = data || hoje.toLocaleDateString('pt-BR');
-            
-            // Calcular carga horária estimada
-            const horasTeoricas = 2;
-            const horasSimulador = 1;
-            const horasAtividades = 2;
-            const cargaHoraria = horasTeoricas + horasSimulador + horasAtividades;
+            const cargaHoraria = 5;
             
             document.getElementById('certContent').innerHTML = `
                 <div class="certificate-container">
@@ -433,20 +429,18 @@
                     <div class="btn-actions">
                         <button class="btn" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
                         <button class="btn btn-secondary" onclick="compartilhar()">📤 Compartilhar Conquista</button>
-                        <button class="btn btn-secondary" onclick="window.location.href='https://lrpluciano-pereira.github.io/index/'">🏠 Voltar ao Início</button>
+                        <button class="btn btn-secondary" onclick="window.location.href='https://lrpluciano-pereira.github.io/index.html'">🏠 Voltar ao Dashboard</button>
                     </div>
                 </div>
             `;
         }
         
-        // Função para escapar HTML
         function escapeHtml(text) {
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
         }
         
-        // Gerar código de verificação único
         function generateVerificationCode(nome, data) {
             const texto = `${nome}_${data}_${new Date().getFullYear()}`;
             let hash = 0;
@@ -458,7 +452,6 @@
             return `ETH-${code}`;
         }
         
-        // Função para compartilhar (simulação)
         function compartilhar() {
             if (navigator.share) {
                 navigator.share({
@@ -473,7 +466,6 @@
             }
         }
         
-        // Inicializar
         gerarCertificado();
     </script>
 </body>
