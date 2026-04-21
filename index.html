@@ -11,169 +11,42 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --bg-dark: #0a1628;
-            --bg-card: #0f1a2f;
-            --bg-light: #16213e;
-            --gold: #d4af37;
-            --gold-dark: #b8942e;
-            --text-primary: #ffffff;
-            --text-secondary: #9aa7b9;
-            --border: #1e2a44;
-        }
-
         body {
-            font-family: 'Segoe UI', 'Roboto', serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.5;
+            font-family: 'Georgia', 'Segoe UI', serif;
+            background: #0a1628;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 24px;
-        }
-
-        .navbar {
-            background: var(--bg-card);
-            border-bottom: 1px solid var(--border);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 12px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        .certificate-container {
-            margin-top: 80px;
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: center;
+            padding: 40px;
         }
 
         .certificate {
             background: linear-gradient(135deg, #fef9e6 0%, #fff8e0 100%);
-            width: 850px;
+            width: 800px;
             max-width: 100%;
             padding: 48px 40px;
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 0 2px var(--gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             text-align: center;
-            position: relative;
             color: #2c1810;
-        }
-
-        .certificate::before {
-            content: "⚖️";
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 3rem;
-            background: var(--gold-dark);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 2px solid #d4af37;
         }
 
         .certificate h1 {
             font-size: 2.2rem;
-            color: #2c1810;
-            margin-top: 20px;
-            font-family: 'Georgia', serif;
             letter-spacing: 4px;
-        }
-
-        .certificate .subtitle {
-            color: #5a4a3a;
-            font-size: 0.9rem;
-            margin-top: 8px;
-            border-bottom: 2px solid var(--gold);
-            display: inline-block;
-            padding-bottom: 8px;
-        }
-
-        .certificate-body {
-            margin: 32px 0;
-        }
-
-        .certificate-body p {
-            font-size: 1rem;
-            color: #3a2a1a;
-            line-height: 1.8;
+            color: #b8942e;
         }
 
         .student-name {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: bold;
-            color: var(--gold-dark);
-            margin: 16px 0;
-            font-family: 'Georgia', serif;
+            color: #b8942e;
+            margin: 20px 0;
             border-bottom: 1px dashed #d4af37;
             display: inline-block;
             padding: 0 20px 8px;
-        }
-
-        .course-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #2c1810;
-            margin: 16px 0;
-        }
-
-        .course-details {
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 12px;
-            padding: 16px;
-            margin: 20px 0;
-            text-align: left;
-            display: inline-block;
-            width: auto;
-        }
-
-        .course-details p {
-            font-size: 0.85rem;
-            margin: 8px 0;
         }
 
         .signature-area {
@@ -184,289 +57,56 @@
             border-top: 1px solid #d4af37;
         }
 
-        .signature {
-            text-align: center;
-            flex: 1;
-        }
-
         .signature-line {
-            width: 200px;
-            max-width: 90%;
+            width: 180px;
             border-top: 1px solid #2c1810;
-            margin: 40px auto 8px;
-        }
-
-        .signature-name {
-            font-size: 0.85rem;
-            color: #5a4a3a;
-            font-weight: 500;
-        }
-
-        .signature-title {
-            font-size: 0.7rem;
-            color: #8a7a6a;
-        }
-
-        .certificate-footer {
-            margin-top: 24px;
-            font-size: 0.7rem;
-            color: #8a7a6a;
-        }
-
-        .btn-actions {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            margin-top: 24px;
-            flex-wrap: wrap;
+            margin: 30px auto 8px;
         }
 
         .btn {
-            background: var(--gold);
-            color: var(--bg-dark);
+            background: #d4af37;
+            color: #0a1628;
             border: none;
             padding: 12px 28px;
             border-radius: 40px;
             cursor: pointer;
             font-weight: bold;
-            transition: all 0.2s;
-            text-decoration: none;
+            margin-top: 24px;
             display: inline-block;
-            font-size: 0.9rem;
-        }
-
-        .btn:hover {
-            transform: scale(1.02);
-            background: #e6c453;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(212,175,55,0.1);
-        }
-
-        .error-message {
-            background: rgba(231, 76, 60, 0.2);
-            border: 1px solid #e74c3c;
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-            max-width: 500px;
-            margin: 100px auto;
-        }
-
-        .error-message h2 {
-            color: #e74c3c;
-            margin-bottom: 16px;
-        }
-
-        .watermark {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            opacity: 0.1;
-            font-size: 4rem;
-            pointer-events: none;
-        }
-
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-                margin: 0;
-            }
-            .navbar, .btn-actions {
-                display: none;
-            }
-            .certificate {
-                box-shadow: none;
-                margin: 0;
-                padding: 20px;
-                width: 100%;
-            }
-            .certificate::before {
-                display: none;
-            }
-            .signature-line {
-                border-top: 1px solid #000;
-            }
+            text-decoration: none;
         }
 
         @media (max-width: 768px) {
-            .signature-area {
-                flex-direction: column;
-                gap: 24px;
-                align-items: center;
-            }
-            .certificate {
-                padding: 32px 20px;
-            }
-            .student-name {
-                font-size: 1.5rem;
-            }
-            .certificate h1 {
-                font-size: 1.6rem;
-            }
-            .signature-line {
-                width: 150px;
-            }
+            .signature-area { flex-direction: column; gap: 20px; }
+            .certificate { padding: 32px 20px; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="https://lrpluciano-pereira.github.io/index.html" class="logo">⚖️ Ética Digital</a>
-            <div class="nav-links">
-                <a href="https://lrpluciano-pereira.github.io/index.html">Início</a>
-                <a href="https://lrpluciano-pereira.github.io/conteudo.html">Conteúdo</a>
-                <a href="https://lrpluciano-pereira.github.io/simulador.html">Simulador</a>
-                <a href="https://lrpluciano-pereira.github.io/forum.html">Atividades</a>
-            </div>
+    <div class="certificate">
+        <h1>CERTIFICADO</h1>
+        <p>Universidade Federal do ABC</p>
+        <div class="student-name" id="nomeAluno"></div>
+        <p>concluiu o curso</p>
+        <h2 style="margin: 16px 0;">"A Ética Aristotélica no Cotidiano Digital"</h2>
+        <p>com carga horária de 5 horas, demonstrando compreensão dos conceitos de<br>
+        <strong>Justo Meio (Mesotes), Eudaimonia e Phronesis</strong>.</p>
+        <div class="signature-area">
+            <div><div class="signature-line"></div>Prof. Dr. Edson Pinheiro Pimentel<br><small>Orientador</small></div>
+            <div><div class="signature-line"></div>Luciano Rodrigues Pereira<br><small>Coordenador</small></div>
         </div>
-    </nav>
-
-    <div id="certContent"></div>
+        <p id="dataCertificado"></p>
+        <a href="/index/" class="btn">🏠 Voltar ao Dashboard</a>
+    </div>
 
     <script>
-        // Verificar login
-        if (!localStorage.getItem('usuario_logado')) {
-            window.location.href = 'https://lrpluciano-pereira.github.io/login.html';
-        }
+        const nome = localStorage.getItem('usuario_nome') || 'Estudante';
+        document.getElementById('nomeAluno').innerText = nome;
+        document.getElementById('dataCertificado').innerHTML = `Santo André, ${new Date().toLocaleDateString('pt-BR')}`;
 
-        function gerarCertificado() {
-            const nome = localStorage.getItem('certificado_nome') || localStorage.getItem('usuario_nome');
-            const data = localStorage.getItem('certificado_data');
-            
-            const videosAssistidos = JSON.parse(localStorage.getItem('videos_assistidos') || '[]');
-            const simulacoes = JSON.parse(localStorage.getItem('simulacoes_realizadas') || '[]');
-            let atividadesConcluidas = 0;
-            for(let i = 1; i <= 4; i++) {
-                const resposta = localStorage.getItem(`resposta_atividade_${i}`);
-                if(resposta && resposta.trim().length > 0) atividadesConcluidas++;
-            }
-            const forumPosts = JSON.parse(localStorage.getItem('forum_posts') || '[]');
-            
-            let totalProgresso = 0;
-            let totalItens = 0;
-            totalProgresso += videosAssistidos.length;
-            totalItens += 3;
-            if (simulacoes.length > 0) totalProgresso += 1;
-            totalItens += 1;
-            totalProgresso += atividadesConcluidas;
-            totalItens += 4;
-            if (forumPosts.length >= 3) totalProgresso += 1;
-            totalItens += 1;
-            
-            const percentualGeral = Math.min(100, Math.round((totalProgresso / totalItens) * 100));
-            
-            if (!nome || percentualGeral < 100) {
-                document.getElementById('certContent').innerHTML = `
-                    <div class="error-message">
-                        <h2>⚠️ Certificado não disponível</h2>
-                        <p>Você precisa completar <strong>100% do curso</strong> no dashboard principal para gerar seu certificado.</p>
-                        <p style="margin-top: 16px;">Seu progresso atual: <strong>${percentualGeral}%</strong></p>
-                        <a href="https://lrpluciano-pereira.github.io/index.html" class="btn" style="margin-top: 20px; display: inline-block;">🏠 Voltar ao Dashboard</a>
-                    </div>
-                `;
-                return;
-            }
-            
-            const hoje = new Date();
-            const dataFormatada = data || hoje.toLocaleDateString('pt-BR');
-            const cargaHoraria = 5;
-            
-            document.getElementById('certContent').innerHTML = `
-                <div class="certificate-container">
-                    <div class="certificate" id="certificate">
-                        <div class="watermark">⚖️</div>
-                        <h1>CERTIFICADO</h1>
-                        <div class="subtitle">Universidade Federal do ABC</div>
-                        
-                        <div class="certificate-body">
-                            <p>Certificamos que</p>
-                            <div class="student-name">${escapeHtml(nome)}</div>
-                            <p>concluiu com aproveitamento o curso</p>
-                            <div class="course-title">"A Ética Aristotélica no Cotidiano Digital"</div>
-                            
-                            <div class="course-details">
-                                <p>📚 <strong>Carga horária:</strong> ${cargaHoraria} horas</p>
-                                <p>📖 <strong>Conteúdo programático:</strong> Fundamentos da Ética Aristotélica, Justo Meio (Mesotes), 
-                                Phronesis (sabedoria prática), Eudaimonia (florescimento humano), aplicações no cotidiano digital.</p>
-                                <p>🎯 <strong>Competências desenvolvidas:</strong> Análise crítica do uso da tecnologia, tomada de decisão ética, 
-                                aplicação do conceito de equilíbrio nas relações digitais.</p>
-                            </div>
-                            
-                            <p>demonstrando compreensão dos conceitos de<br>
-                            <strong>Justo Meio (Mesotes), Eudaimonia e Phronesis</strong>, aplicados ao uso consciente das tecnologias digitais.</p>
-                        </div>
-                        
-                        <div class="signature-area">
-                            <div class="signature">
-                                <div class="signature-line"></div>
-                                <div class="signature-name">Prof. Dr. Edson Pinheiro Pimentel</div>
-                                <div class="signature-title">Orientador</div>
-                            </div>
-                            <div class="signature">
-                                <div class="signature-line"></div>
-                                <div class="signature-name">Luciano Rodrigues Pereira</div>
-                                <div class="signature-title">Coordenador do Curso</div>
-                            </div>
-                        </div>
-                        
-                        <div class="certificate-footer">
-                            <p>Santo André, ${dataFormatada}</p>
-                            <p>Certificado emitido digitalmente - Licença Creative Commons BY-NC-SA</p>
-                            <p style="margin-top: 8px;">🔍 Verificação: ${generateVerificationCode(nome, dataFormatada)}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="btn-actions">
-                        <button class="btn" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
-                        <button class="btn btn-secondary" onclick="compartilhar()">📤 Compartilhar Conquista</button>
-                        <button class="btn btn-secondary" onclick="window.location.href='https://lrpluciano-pereira.github.io/index.html'">🏠 Voltar ao Dashboard</button>
-                    </div>
-                </div>
-            `;
+        if (!localStorage.getItem('usuario_logado')) {
+            window.location.href = '/login/';
         }
-        
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-        
-        function generateVerificationCode(nome, data) {
-            const texto = `${nome}_${data}_${new Date().getFullYear()}`;
-            let hash = 0;
-            for (let i = 0; i < texto.length; i++) {
-                hash = ((hash << 5) - hash) + texto.charCodeAt(i);
-                hash |= 0;
-            }
-            const code = Math.abs(hash).toString(16).toUpperCase().substring(0, 8);
-            return `ETH-${code}`;
-        }
-        
-        function compartilhar() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Certificado - Ética Aristotélica',
-                    text: 'Acabei de concluir o curso "A Ética Aristotélica no Cotidiano Digital"!',
-                    url: window.location.href
-                }).catch(() => {
-                    alert('📤 Certificado disponível para download! Use a opção "Imprimir" para salvar como PDF.');
-                });
-            } else {
-                alert('📤 Parabéns pela conquista! Use a opção "Imprimir" para salvar seu certificado como PDF.');
-            }
-        }
-        
-        gerarCertificado();
     </script>
 </body>
 </html>
