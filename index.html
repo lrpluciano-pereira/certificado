@@ -5,81 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificado | Ética Aristotélica no Cotidiano Digital</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', 'Segoe UI', serif;
-            background: #0a1628;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-        }
-
-        .certificate {
-            background: linear-gradient(135deg, #fef9e6 0%, #fff8e0 100%);
-            width: 800px;
-            max-width: 100%;
-            padding: 48px 40px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            text-align: center;
-            color: #2c1810;
-            border: 2px solid #d4af37;
-        }
-
-        .certificate h1 {
-            font-size: 2.2rem;
-            letter-spacing: 4px;
-            color: #b8942e;
-        }
-
-        .student-name {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #b8942e;
-            margin: 20px 0;
-            border-bottom: 1px dashed #d4af37;
-            display: inline-block;
-            padding: 0 20px 8px;
-        }
-
-        .signature-area {
-            display: flex;
-            justify-content: space-between;
-            margin: 40px 0 20px;
-            padding-top: 20px;
-            border-top: 1px solid #d4af37;
-        }
-
-        .signature-line {
-            width: 180px;
-            border-top: 1px solid #2c1810;
-            margin: 30px auto 8px;
-        }
-
-        .btn {
-            background: #d4af37;
-            color: #0a1628;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 40px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 24px;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .signature-area { flex-direction: column; gap: 20px; }
-            .certificate { padding: 32px 20px; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Georgia', 'Segoe UI', serif; background: #0a1628; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 40px; }
+        .certificate { background: linear-gradient(135deg, #fef9e6 0%, #fff8e0 100%); width: 850px; max-width: 100%; padding: 48px 40px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); text-align: center; color: #2c1810; border: 2px solid #d4af37; position: relative; }
+        .certificate h1 { font-size: 2.2rem; letter-spacing: 4px; color: #b8942e; }
+        .student-name { font-size: 2rem; font-weight: bold; color: #b8942e; margin: 20px 0; border-bottom: 1px dashed #d4af37; display: inline-block; padding: 0 20px 8px; }
+        .signature-area { display: flex; justify-content: space-between; margin: 40px 0 20px; padding-top: 20px; border-top: 1px solid #d4af37; }
+        .signature-line { width: 180px; border-top: 1px solid #2c1810; margin: 30px auto 8px; }
+        .btn { background: #d4af37; color: #0a1628; border: none; padding: 12px 28px; border-radius: 40px; cursor: pointer; font-weight: bold; margin-top: 24px; display: inline-block; text-decoration: none; }
+        @media (max-width: 768px) { .signature-area { flex-direction: column; gap: 20px; } .certificate { padding: 32px 20px; } .student-name { font-size: 1.5rem; } }
     </style>
 </head>
 <body>
@@ -89,24 +23,18 @@
         <div class="student-name" id="nomeAluno"></div>
         <p>concluiu o curso</p>
         <h2 style="margin: 16px 0;">"A Ética Aristotélica no Cotidiano Digital"</h2>
-        <p>com carga horária de 5 horas, demonstrando compreensão dos conceitos de<br>
-        <strong>Justo Meio (Mesotes), Eudaimonia e Phronesis</strong>.</p>
-        <div class="signature-area">
-            <div><div class="signature-line"></div>Prof. Dr. Edson Pinheiro Pimentel<br><small>Orientador</small></div>
-            <div><div class="signature-line"></div>Luciano Rodrigues Pereira<br><small>Coordenador</small></div>
-        </div>
+        <p>com carga horária de <strong>8 horas</strong>, demonstrando compreensão dos conceitos de<br>
+        <strong>Justo Meio (Mesotes), Eudaimonia e Phronesis</strong>, além de refletir sobre<br>
+        o uso consciente da tecnologia e o equilíbrio digital.</p>
+        <div class="signature-area"><div><div class="signature-line"></div>Prof. Dr. Edson Pinheiro Pimentel<br><small>Orientador</small></div><div><div class="signature-line"></div>Luciano Rodrigues Pereira<br><small>Coordenador</small></div></div>
         <p id="dataCertificado"></p>
         <a href="/index/" class="btn">🏠 Voltar ao Dashboard</a>
     </div>
-
     <script>
-        const nome = localStorage.getItem('usuario_nome') || 'Estudante';
+        let nome = localStorage.getItem('certificado_nome') || localStorage.getItem('usuario_nome') || 'Estudante';
         document.getElementById('nomeAluno').innerText = nome;
         document.getElementById('dataCertificado').innerHTML = `Santo André, ${new Date().toLocaleDateString('pt-BR')}`;
-
-        if (!localStorage.getItem('usuario_logado')) {
-            window.location.href = '/login/';
-        }
+        if (!localStorage.getItem('usuario_logado')) window.location.href = '/login/';
     </script>
 </body>
 </html>
